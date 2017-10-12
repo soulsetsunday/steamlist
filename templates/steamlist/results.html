@@ -1,8 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'steamlist/style.css' %}" />
 {% if gamelist %}
+<table id = "results">
+	<tr><th></th><th>Name</th><th>Review Score</th></tr>
 {% for x in gamelist %}
 {% if x.review_score != 0 %}
-<p><!--<img src="{{x.logo}}">-->{{x.name}} Hours Played: {{x.hours_played}} Review Score: {{x.review_score}}</p>
+<!--<p> <img src="{{x.logo}}"> {{x.name}} Hours Played: {{x.hours_played}} Review Score: {{x.review_score}}</p> -->
+<tr><td><img src="{{x.logo}}"></td><td>{{x.name}}</td><td>{{x.review_score}}</td></tr>
 {% endif %}
 {% endfor %}
+</table>
 {% endif %}
 
