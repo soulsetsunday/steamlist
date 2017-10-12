@@ -1,0 +1,8 @@
+{% if gamelist %}
+{% for x in gamelist %}
+{% if x.review_score != 0 %}
+<p><!--<img src="{{x.logo}}">-->{{x.name}} Hours Played: {{x.hours_played}} Review Score: {{x.review_score}}</p>
+{% endif %}
+{% endfor %}
+{% endif %}
+
